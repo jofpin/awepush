@@ -1,0 +1,12 @@
+{
+    "name": "awepush",
+    "description": "Awesome push code",
+    "keywords": ["awepush", "awesome"],
+    "version": 1.0,
+    "author": [
+        {
+            "name": "Jose Pino",
+            "twitter": "@mrjopino"
+        }
+    ]
+}

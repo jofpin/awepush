@@ -3,14 +3,14 @@ awepush
 
 Awesome push 'construction process'
 
-hey here [demo of project with awepush.js](http://mrjopino.github.io/amposh/). 
+hey here [demo of project with awepush.js](http://jofpin.github.io/amposh/). 
 
 ```js
-// awepush.js
-_awepush = "your class";
+// awepush.js > How to use
+awepush = "your class";
 ```
 -------------
 
-Copyright, 2014 by [José Pino](http://twitter.com/mrjopino)
+Copyright, 2014 by [Jose Pino](http://twitter.com/jofpin)
 
 -------------

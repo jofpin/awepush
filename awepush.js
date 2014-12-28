@@ -3,7 +3,7 @@
  * <3 awepush.js
  *
  * Awesome push
- * Version: 1.0
+ * Version: 1.0.1
  *
  * Find the project on GitHub: 
  * https://github.com/jofpin/awepush
@@ -13,37 +13,49 @@
  * https://twitter.com/jofpin
  * ============================
  */
-$(function() {
-  /**
-   * @param {string} seconds
-   * @return {undefined}
-   */
-  var init = function(seconds) {
-    /** @type {string} */
-    secs = seconds + "s";
-    /** @type {string} */
-    tag_awepush_css = "style";
-    /** @type {string} */
-    animation_value_css = "awepush_intro .6s ease both";
-    /** @type {string} */
-    kf_awepush = "<" + tag_awepush_css + ">" + "@-webkit-keyframes awepush_intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-moz-keyframes awepush_intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-ms-keyframes awepush_intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-o-keyframes awepush_intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @keyframes awepush_intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } }" + 
-    "</" + tag_awepush_css + ">";
-    $(kf_awepush).appendTo(awepush);
-    $(awepush).css({
-      "-webkit-animation" : animation_value_css,
-      "-moz-animation" : animation_value_css,
-      "-ms-animation" : animation_value_css,
-      "-o-animation" : animation_value_css,
-      "animation" : animation_value_css,
-      "-webkit-animation-delay" : secs,
-      "-moz-animation-delay" : secs,
-      "-ms-animation-delay" : secs,
-      "-o-animation-delay" : secs,
-      "animation-delay" : secs
-    });
+var Awepush = (function(element, seconds) {
+  var pull = {
+    self: this,
+    stripe: "-",
+    tag: "style",
+    prefix: {
+      wk: "-webkit-",
+      moz: "-moz-",
+      ms: "-ms-",
+      o: "-o-"
+    },
+    anim: "animation",
+    valueDelay: "0." + seconds + "s",
+    valueNormal: "intro .4s ease both",
+    run: function() {
+      // reflect seting()
+       pull.self.seting();
+    }
   };
   
-  // running > seconds of transition load
-  init("0.8");
+  // seting (keyframes of intro)
+  pull.self.seting = function() {
+    var keyframes  = '<' + pull.tag + '>' + 
+  '@-webkit-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-moz-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-ms-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-o-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } }' + 
+  '</' + pull.tag + '>'; 
+
+    /* Intro CSS animation */    
+    $(element).css(pull.prefix.wk + pull.anim, pull.valueNormal);
+    $(element).css(pull.prefix.moz + pull.anim, pull.valueNormal);
+    $(element).css(pull.prefix.ms + pull.anim, pull.valueNormal);
+    $(element).css(pull.prefix.o + pull.anim, pull.valueNormal);
+    $(element).css(pull.prefix.wk + pull.anim + pull.stripe + "delay", pull.valueDelay);
+    $(element).css(pull.prefix.moz + pull.anim + pull.stripe + "delay", pull.valueNormal);
+    $(element).css(pull.prefix.ms + pull.anim + pull.stripe + "delay", pull.valueDelay);
+    $(element).css(pull.prefix.o + pull.anim + pull.stripe + "delay", pull.valueDelay);
+    $(element).css(pull.anim + pull.stripe + "delay", pull.valueDelay); 
+    $(element).css(pull.anim, pull.valueNormal);
+ 
+    // reflect animation
+    $(keyframes).appendTo(element);
+  };
+  
+  // running 
+  pull.run();  
   
 });

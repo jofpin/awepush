@@ -32,10 +32,10 @@ var Awepush = (function(element, seconds) {
        pull.self.seting();
     }
   };
-  
-  // seting (keyframes of intro)
+
+   // seting (keyframes of intro)
   pull.self.seting = function() {
-    var keyframes  = '<' + pull.tag + '>' + 
+    pull.self.keyframes  = '<' + pull.tag + '>' + 
   '@-webkit-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-moz-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-ms-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @-o-keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } } @keyframes intro { 0% { top: -20em; opacity: 0; } 100% { top: 0; opacity: 1; } }' + 
   '</' + pull.tag + '>'; 
 
@@ -52,7 +52,7 @@ var Awepush = (function(element, seconds) {
     $(element).css(pull.anim, pull.valueNormal);
  
     // reflect animation
-    $(keyframes).appendTo(element);
+    $(pull.self.keyframes).appendTo(element);
   };
   
   // running 

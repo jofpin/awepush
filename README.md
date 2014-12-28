@@ -1,13 +1,24 @@
 awepush
 =======
 
-Awesome push 'construction process'
+Small and sexy effect of input > 'construction process'
 
 hey here [demo of project with awepush.js](http://jofpin.github.io/amposh/). 
 
-```js
-// awepush.js > How to use
-awepush = "your class";
+```html
+// use shurl.js
+<script>
+Awepush("#text", 6);
+// example: the (element) and load seconds
+</script>
+```
+
+```html
+<!-- example to implement -->
+<h1 id="text">Hello testing Awepush.JS</h1>
+
+<!-- import lib awepush.js -->
+<script src="awepush.js"></script>
 ```
 -------------
 

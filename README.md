@@ -6,7 +6,7 @@ Small and sexy effect of input > 'construction process'
 hey here [demo of project with awepush.js](http://jofpin.github.io/amposh/). 
 
 ```html
-// use shurl.js
+<!-- use awepush.js -->
 <script>
 Awepush("#text", 6);
 // example: the (element) and load seconds

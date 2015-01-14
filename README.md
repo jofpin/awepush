@@ -1,7 +1,7 @@
 awepush
 =======
 
-Small and sexy effect of input > 'construction process'
+Small and sexy effect of input ><
 
 hey here [demo of project with awepush.js](http://jofpin.github.io/amposh/). 
 
